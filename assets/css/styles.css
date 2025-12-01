@@ -1,0 +1,128 @@
+/* Minimal styles for the mini shop */
+:root{
+  --bg:#f6f7fb;
+  --card:#fff;
+  --accent:#e55947;
+  --muted:#6b6b6b;
+  --radius:10px;
+  --max-width:1100px;
+  --shadow: 0 6px 18px rgba(10,10,20,0.06);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:"Open Sans",system-ui,Segoe UI,Roboto,Arial; background:var(--bg); color:#111}
+.wrap{max-width:var(--max-width);margin:0 auto;padding:1rem}
+.site-header{background:linear-gradient(90deg,#fff 0,#fff 100%);box-shadow:var(--shadow);position:sticky;top:0;z-index:50}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 1rem}
+.logo{margin:0;font-weight:700}
+.actions{display:flex;gap:0.5rem;align-items:center}
+.cart-btn{background:transparent;border:1px solid #ddd;padding:6px 10px;border-radius:8px;cursor:pointer}
+
+/* hero */
+.main{padding:1.2rem}
+.hero{background:linear-gradient(90deg, rgba(229,89,71,0.06), transparent);padding:1.2rem;border-radius:12px;margin-bottom:1rem;display:flex;flex-direction:column;gap:.5rem}
+.hero h2{margin:0;font-size:1.25rem}
+.hero p{margin:0;color:var(--muted)}
+
+/* products grid */
+.products{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;margin-top:1rem}
+.card{background:var(--card);padding:0.75rem;border-radius:12px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:.6rem;min-height:300px}
+.card .thumb{height:150px;border-radius:8px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#f3f4f6,#fff)}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.card h4{margin:0;font-size:1rem}
+.card p{margin:0;color:var(--muted);font-size:0.9rem}
+.card .actions{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:.5rem}
+.btn{padding:8px 10px;border-radius:8px;border:0;cursor:pointer}
+.btn.primary{background:var(--accent);color:#fff}
+.btn.ghost{background:transparent;border:1px solid #ddd}
+
+/* cart sidebar */
+.cart{position:fixed;right:-420px;top:0;height:100vh;width:380px;background:var(--card);box-shadow: -10px 0 30px rgba(10,10,20,0.08);transition:right .25s;z-index:60;display:flex;flex-direction:column}
+.cart.open{right:0}
+.cart-header{display:flex;align-items:center;justify-content:space-between;padding:1rem;border-bottom:1px solid #eee}
+.cart-items{padding:1rem;overflow:auto;flex:1}
+.cart-item{display:flex;gap:.6rem;align-items:center;padding:.5rem 0;border-bottom:1px dashed #eee}
+.cart-item img{width:64px;height:64px;border-radius:8px;object-fit:cover}
+.item-info{flex:1}
+.qty-controls{display:flex;gap:.4rem;align-items:center;margin-top:6px}
+.qty-controls button{padding:4px 8px;border-radius:6px;border:1px solid #ddd;background:transparent}
+.cart-footer{padding:1rem;border-top:1px solid #eee;display:flex;flex-direction:column;gap:.6rem}
+.cart-total{display:flex;justify-content:space-between;align-items:center;font-size:1.05rem}
+
+/* overlay */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,0.35);opacity:0;pointer-events:none;transition:opacity .25s;z-index:55}
+.overlay.show{opacity:1;pointer-events:auto}
+
+/* responsive */
+@media (max-width:640px){
+  .cart{width:100%;right:-100%}
+  .cart.open{right:0}
+  .products{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
+}
+/* ===== IMAGE VIEW MODAL ===== */
+.img-modal {
+  display: none; 
+  position: fixed;
+  z-index: 200;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0,0,0,0.75);
+}
+
+.img-modal-content {
+  margin: 5% auto;
+  padding: 0;
+  max-width: 700px;
+  width: 90%;
+  border-radius: 10px;
+  overflow: hidden;
+  animation: zoomIn 0.3s ease;
+}
+
+.img-modal-content img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
+.img-modal-close {
+  color: #fff;
+  float: right;
+  font-size: 35px;
+  font-weight: bold;
+  margin-right: 15px;
+  margin-top: 10px;
+  cursor: pointer;
+  position: absolute;
+  right: 25px;
+  top: 10px;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+/* ===== FILTERS ===== */
+.filter-box {
+  margin: 1rem 0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.filter-box input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.filter-box select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}

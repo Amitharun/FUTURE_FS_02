@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Minimal Shop - Demo</title>
+
+  <!-- google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <h1 class="logo">MiniShop</h1>
+      <div class="actions">
+        <button id="cart-button" class="cart-btn">Cart (<span id="cart-count">0</span>)</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap main">
+    <section class="hero">
+      <h2>Simple products — add to cart and checkout (demo)</h2>
+      <p>Minimal template for quick submission.</p>
+    </section>
+    <!-- ===== SEARCH + FILTERS ===== -->
+<div class="filter-box">
+  <input type="text" id="search-input" placeholder="Search products..." />
+
+  <select id="price-filter">
+    <option value="all">Price: All</option>
+    <option value="0-1000">Under ₹1000</option>
+    <option value="1000-2000">₹1000 - ₹2000</option>
+    <option value="2000-3000">₹2000 - ₹3000</option>
+    <option value="3000+">Above ₹3000</option>
+  </select>
+</div>
+
+
+    <section class="products" id="products">
+      <!-- products injected by JS -->
+    </section>
+  </main>
+
+  <!-- CART SIDEBAR -->
+  <aside id="cart" class="cart">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button id="close-cart" class="close">✕</button>
+    </div>
+    <div id="cart-items" class="cart-items">
+      <!-- items injected -->
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span> <strong id="cart-total">₹0.00</strong>
+      </div>
+      <button id="clear-cart" class="btn danger">Clear</button>
+      <button id="checkout" class="btn primary">Checkout</button>
+    </div>
+  </aside>
+
+  <!-- overlay when cart open -->
+  <div id="overlay" class="overlay"></div>
+
+  <!-- IMAGE VIEW MODAL -->
+<div id="image-modal" class="img-modal">
+  <div class="img-modal-content">
+    <span id="modal-close" class="img-modal-close">×</span>
+    <img id="modal-img" src="" alt="Product Image">
+  </div>
+</div>
+
+
+  <!-- JS -->
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>

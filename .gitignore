@@ -1,0 +1,20 @@
+# Node backend
+backend/node_modules/
+backend/.env
+
+# MongoDB local data (DO NOT UPLOAD THESE)
+data/
+dump/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
