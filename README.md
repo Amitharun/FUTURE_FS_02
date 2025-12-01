@@ -1,12 +1,26 @@
-# Responsive Ecommerce Website
-## [Watch it on youtube](https://youtu.be/74UVy9gomVs)
-### Responsive Ecommerce Website
+# Responsive Ecommerce Website (Frontend + Backend + MongoDB)
 
-- Responsive Ecommerce Website Using HTML CSS JavaScript
-- Contains smooth scrolling in each section.
-- Developed first with the Mobile First methodology, then for desktop.
-- Compatible with all mobile devices and with a beautiful and pleasant user interface.
+This project includes:
+- Responsive ecommerce UI
+- Product filter & search
+- Cart functionality
+- Checkout system
+- MongoDB order storage
+- Simple backend API (Express + Mongoose)
 
-💙 Join the channel to see more videos like this. [Bedimcode](https://www.youtube.com/@Bedimcode)
+## Setup Instructions
 
-![preview img](/preview.png)
+### 1. Frontend
+Open `index.html` using Live Server.
+
+### 2. Backend
+cd backend
+npm install
+node server.js
+
+
+### 3. MongoDB
+Local Mongo server must be running.
+
+### 4. Orders View
+Orders saved inside MongoDB → `minishop` → `orders`.
